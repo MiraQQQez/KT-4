@@ -1,0 +1,202 @@
+body {
+  font-family: Arial, sans-serif; /* Используем шрифт Arial, если доступен, или любой другой без засечек */
+  background-color: #a2d3e0; /* Задаем светло-голубой фоновый цвет */
+  display: flex; /* Центрируем содержимое и делаем его гибким */
+  justify-content: center; /* Горизонтально центрируем содержимое */
+  align-items: center; /* Вертикально центрируем содержимое */
+  height: 100vh; /* Высота viewport, чтобы содержимое всегда занимало 100% экрана */
+  margin: 0; /* Убираем внешние отступы для body */
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+}
+
+header {
+  width: 100%; /* Заголовок занимает всю ширину экрана */
+  background-color: #ffffff; /* Белый цвет фона для заголовка */
+  padding: 10px 20px; /* Внутренние отступы сверху и снизу (10px), слева и справа (20px) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем теневой эффект для придания объема */
+  display: flex; /* Делаем элементы внутри header гибкими */
+  justify-content: space-between; /* Распределяем пространство между элементами внутри header */
+  align-items: center; /* Центрируем элементы вертикально */
+  position: absolute; /* Фиксируем хедер наверху страницы */
+  top: 0; /* Располагаем хедер у верхней границы */
+}
+
+.logo {
+  font-size: 18px; /* Размер шрифта для логотипа */
+  font-weight: bold; /* Делаем текст логотипа жирным */
+  color: #333333; /* Цвет текста логотипа темно-серый */
+  margin-right: auto; /* Автоматический отступ справа для центрирования */
+  margin-left: auto; /* Автоматический отступ слева для центрирования */
+}
+
+.menu-icon {
+  font-size: 24px; /* Размер шрифта для иконки меню */
+  cursor: pointer; /* Курсор меняется на указатель при наведении, демонстрируя интерактивность */
+  margin-right: auto; /* Автоматический отступ справа для центрирования */
+  margin-left: auto; /* Автоматический отступ слева для центрирования */
+}
+
+.container {
+  display: grid; /* Используем сеточное расположение для элементов внутри */
+  grid-template-columns: repeat(2, 1fr); /* Две колонки одинаковой ширины */
+  gap: 20px; /* Промежуток между элементами сетки */
+  width: 600px; /* Ширина контейнера */
+}
+
+.card {
+  background-color: #ffffff; /* Белый цвет фона для карточки */
+  padding: 7px; /* Внутренние отступы для содержания карточки */
+  border: 2px solid #70a9cf; /* Голубая обводка для карточки */
+  border-radius: 10px; /* Скругляем углы карточки */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем тень для объема */
+  max-width: 300px; /* Максимальная ширина карточки */
+  color: #70a9cf; /* Голубой цвет текста внутри карточки */
+  margin-top: 20px; /* Расстояние сверху до карточки */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавные переходы при наведении */
+}
+
+.card p {
+  font-size: 16px; /* Размер шрифта для абзацев внутри карточки */
+  line-height: 1.6; /* Высота строки для улучшения читаемости текста */
+  color: #555555; /* Темно-серый цвет текста абзацев */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Поднимаем карточку вверх при наведении */
+  border-color: #5b8dab; /* Меняем цвет границы на более тёмный голубой при наведении */
+}
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  transition: color 0.3s ease; /* Плавный переход для цвета заголовков */
+}
+
+.card:hover h1,
+.card:hover h2,
+.card:hover h3,
+.card:hover h4,
+.card:hover h5,
+.card:hover h6 {
+  color: #5b8dab; /* Меняем цвет заголовков на более тёмный голубой при наведении */
+}
+
+/* Адаптивные стили для разных размеров экранов */
+
+/* Для экранов шириной до 1440px */
+@media screen and (max-width: 1440px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 600px;
+    height: 600px; /* Устанавливаем фиксированную высоту */
+  }
+  .card {
+    padding: 15px; /* Увеличиваем внутренние отступы */
+    margin: 8px; /* Расстояние между карточками уменьшаем */
+  }
+}
+
+/* Для экранов шириной до 1024px */
+@media screen and (max-width: 1024px) {
+  .card {
+    padding: 10px; /* Уменьшаем внутренние отступы */
+    margin: 6px; /* Уменьшаем отступы между карточками */
+    border-width: 1px; /* Уменьшаем толщину границы */
+  }
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: auto; /* Всё так же оставляем иконку влево */
+    margin-left: 650px; /* Увеличиваем отступ слева для центрирования */
+  }
+}
+
+/* Для экранов шириной до 768px */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 10px; /* Внутренний отступ для карточки */
+    margin: 5px; /* Отступы продолжают уменьшаться */
+  }
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: auto; /* Оставляем иконку влево */
+    margin-left: 650px; /* Центрируя иконку*/
+  }
+}
+
+/* Для экранов шириной до 480px */
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 8px; /* Паддинг карточки уменьшаем еще больше */
+    font-size: 14px; /* Уменьшаем размер шрифта для карты */
+  }
+}
+
+/* Для экранов шириной до 425px */
+@media screen and (max-width: 425px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 400px; /* Уменьшаем ширину контейнера */
+    height: 200px; /* Устанавливаем высоту контейнера */
+  }
+  .card {
+    padding: auto; /* Автоматический отступ */
+    font-size: 14px; /* Уменьшаем размер текста */
+  }
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: auto; /* Размещаем левее */
+    margin-left: 300px; /* Уменьшаем отступ слева */
+  }
+}
+
+/* Для экранов шириной до 375px */
+@media screen and (max-width: 375px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 350px; /* Еще больше уменьшаем ширину */
+    height: 600px; /* Увеличиваем высоту */
+  }
+  .card {
+    padding: auto; /* Автоматические внутренние отступы */
+    font-size: 14px; /* Размер текста для карточки */
+  }
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: auto; /* Оставляем иконку влево */
+    margin-left: 275px; /* Центрируем иконку */
+  }
+}
+
+/* Для экранов шириной до 320px */
+@media screen and (max-width: 320px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Меняем на одну колонку */
+    gap: 20px;
+    width: 275px; /* Уменьшаем ширину до минимума */
+    height: 300px; /* Устанавливаем высоту */
+  }
+  .card {
+    padding: auto; /* Автоматические внутренние отступы */
+    font-size: 14px; /* Размер текста для карточки */
+  }
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: auto; /* Иконка остается слева */
+    margin-left: 235px; /* Центрируем ее больше */
+  }
+}
